@@ -29,6 +29,7 @@ body {
 
 .row {
   display: flex;
+  justify-content: space-between;
 }
 
 .keys {
@@ -43,6 +44,7 @@ body {
   transition: .2s;
   background-color: #fff;
   font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
 }
 
 .backspace-key {
