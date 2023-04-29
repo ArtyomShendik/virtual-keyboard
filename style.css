@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +5,6 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
   transition: .2s;
 }
 
@@ -35,15 +32,17 @@ body {
 }
 
 .keys {
-  width: 60px;
-  height: 60px;
-  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
   margin: 4px;
   transition: .2s;
-  z-index: 5;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .backspace-key {
@@ -83,9 +82,10 @@ body {
   border: none;
   outline: none;
   font-size: 26px;
-  background-color: #f7f7f7;
+  background-color: #cecaca;
   padding-left: 10px;
   transition: .2s;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .keys.active {

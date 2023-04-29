@@ -378,4 +378,7 @@ row5.appendChild(ctrlRight);
 const input = document.createElement('input');
 input.classList.add('text');
 input.setAttribute('type', 'text')
-container.prepend(input)
+container.prepend(input);
+
+// added interactive
+
