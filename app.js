@@ -94,3 +94,84 @@ backspace.innerHTML = 'Backspace';
 row1.appendChild(backspace);
 
 
+// second row
+
+const row2 = document.querySelectorAll('.row')[1];
+
+const tab = document.createElement('button');
+tab.classList.add('keys');
+tab.classList.add('tab-key');
+tab.innerHTML = 'Tab';
+row2.appendChild(tab);
+
+const q = document.createElement('button');
+q.classList.add('keys');
+q.innerHTML = 'q';
+row2.appendChild(q);
+
+const w = document.createElement('button');
+w.classList.add('keys');
+w.innerHTML = 'w';
+row2.appendChild(w);
+
+const e = document.createElement('button');
+e.classList.add('keys');
+e.innerHTML = 'e';
+row2.appendChild(e);
+
+const r = document.createElement('button');
+r.classList.add('keys');
+r.innerHTML = 'r';
+row2.appendChild(r);
+
+const t = document.createElement('button');
+t.classList.add('keys');
+t.innerHTML = 't';
+row2.appendChild(t);
+
+const y = document.createElement('button');
+y.classList.add('keys');
+y.innerHTML = 'y';
+row2.appendChild(y);
+
+const u = document.createElement('button');
+u.classList.add('keys');
+u.innerHTML = 'u';
+row2.appendChild(u);
+
+const i = document.createElement('button');
+i.classList.add('keys');
+i.innerHTML = 'i';
+row2.appendChild(i);
+
+const o = document.createElement('button');
+o.classList.add('keys');
+o.innerHTML = 'o';
+row2.appendChild(o);
+
+const p = document.createElement('button');
+p.classList.add('keys');
+p.innerHTML = 'p';
+row2.appendChild(p);
+
+const braceRight = document.createElement('button');
+braceRight.classList.add('keys');
+braceRight.innerHTML = '{';
+row2.appendChild(braceRight);
+
+const braceLeft = document.createElement('button');
+braceLeft.classList.add('keys');
+braceLeft.innerHTML = '}';
+row2.appendChild(braceLeft);
+
+const slash = document.createElement('button');
+slash.classList.add('keys');
+slash.classList.add('slash-key');
+slash.innerHTML = "/";
+row2.appendChild(slash);
+
+
+
+
+
+
