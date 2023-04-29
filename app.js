@@ -243,5 +243,84 @@ enter.innerHTML = "Enter";
 row3.appendChild(enter);
 
 
+// fourth row
+
+const row4 = document.querySelectorAll('.row')[3];
+
+const shift = document.createElement('button');
+shift.classList.add('keys');
+shift.classList.add('shift-key');
+shift.classList.add('shift-left');
+shift.innerHTML = 'Shift';
+row4.appendChild(shift);
+
+const z = document.createElement('button');
+z.classList.add('keys');
+z.innerHTML = 'z';
+row4.appendChild(z);
+
+const x = document.createElement('button');
+x.classList.add('keys');
+x.innerHTML = 'x';
+row4.appendChild(x);
+
+const xButton = document.createElement('button');
+xButton.classList.add('keys');
+xButton.innerHTML = 'x';
+row4.appendChild(xButton);
+
+const c = document.createElement('button');
+c.classList.add('keys');
+c.innerHTML = 'c';
+row4.appendChild(c);
+
+const v = document.createElement('button');
+v.classList.add('keys');
+v.innerHTML = 'v';
+row4.appendChild(v);
+
+const b = document.createElement('button');
+b.classList.add('keys');
+b.innerHTML = 'b';
+row4.appendChild(b);
+
+const n = document.createElement('button');
+n.classList.add('keys');
+n.innerHTML = 'n';
+row4.appendChild(n);
+
+const m = document.createElement('button');
+m.classList.add('keys');
+m.innerHTML = 'm';
+row4.appendChild(m);
+
+const comma = document.createElement('button');
+comma.classList.add('keys');
+comma.innerHTML = ',';
+row4.appendChild(comma);
+
+const left = document.createElement('button');
+left.classList.add('keys');
+left.innerHTML = '<';
+row4.appendChild(left);
+
+const right = document.createElement('button');
+right.classList.add('keys');
+right.innerHTML = '>';
+row4.appendChild(right);
+
+const question = document.createElement('button');
+question.classList.add('keys');
+question.innerHTML = '?';
+row4.appendChild(question);
+
+const shiftRight = document.createElement('button');
+shiftRight.classList.add('keys');
+shiftRight.classList.add('shift-key');
+shiftRight.classList.add('shift-right');
+shiftRight.innerHTML = 'Shift';
+row4.appendChild(shiftRight);
+
+
 
 
