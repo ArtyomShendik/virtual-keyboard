@@ -372,3 +372,10 @@ ctrlRight.classList.add('ctrl-right');
 ctrlRight.innerHTML = 'Ctrl';
 row5.appendChild(ctrlRight);
 
+
+// create input
+
+const input = document.createElement('input');
+input.classList.add('text');
+input.setAttribute('type', 'text')
+container.prepend(input)
