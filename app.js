@@ -322,5 +322,53 @@ shiftRight.innerHTML = 'Shift';
 row4.appendChild(shiftRight);
 
 
+// fifth row
 
+
+const row5 = document.querySelectorAll('.row')[4];
+
+const ctrl = document.createElement('button');
+ctrl.classList.add('keys');
+ctrl.classList.add('ctrl-key');
+ctrl.classList.add('ctrl-left');
+ctrl.innerHTML = 'Ctrl';
+row5.appendChild(ctrl);
+
+const win = document.createElement('button');
+win.classList.add('keys');
+win.classList.add('win-key');
+win.innerHTML = 'Win';
+row5.appendChild(win);
+
+const alt = document.createElement('button');
+alt.classList.add('keys');
+alt.classList.add('alt-key');
+alt.classList.add('alt-left');
+alt.innerHTML = 'Alt';
+row5.appendChild(alt);
+
+const space = document.createElement('button');
+space.classList.add('keys');
+space.classList.add('space-key');
+space.innerHTML = ' ';
+row5.appendChild(space);
+
+const altRight = document.createElement('button');
+altRight.classList.add('keys');
+altRight.classList.add('alt-key');
+altRight.classList.add('alt-right');
+altRight.innerHTML = 'Alt';
+row5.appendChild(altRight);
+
+const fn = document.createElement('button');
+fn.classList.add('keys');
+fn.innerHTML = 'Fn';
+row5.appendChild(fn);
+
+const ctrlRight = document.createElement('button');
+ctrlRight.classList.add('keys');
+ctrlRight.classList.add('ctrl-key');
+ctrlRight.classList.add('ctrl-right');
+ctrlRight.innerHTML = 'Ctrl';
+row5.appendChild(ctrlRight);
 
