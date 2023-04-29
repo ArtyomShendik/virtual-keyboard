@@ -4,7 +4,7 @@ const body = document.body;
 
 const container = document.createElement('div');
 container.classList.add('container');
-body.appendChild(container);
+body.prepend(container);
 
 const keyboardWrapper = document.createElement('div');
 keyboardWrapper.classList.add('keyboard-wrapper');
@@ -14,7 +14,7 @@ const keyboardKeys = document.createElement('div');
 keyboardKeys.classList.add('keyboard-keys');
 keyboardWrapper.appendChild(keyboardKeys);
 
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 5; i++) {
   const row = document.createElement('div');
   row.classList.add('row');
   keyboardKeys.appendChild(row)
