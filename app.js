@@ -171,6 +171,76 @@ slash.innerHTML = "/";
 row2.appendChild(slash);
 
 
+// third row
+
+const row3 = document.querySelectorAll('.row')[2];
+
+const capslock = document.createElement('button');
+capslock.classList.add('keys');
+capslock.classList.add('capslock-key');
+capslock.innerHTML = 'Caps Lock';
+row3.appendChild(capslock);
+
+const a = document.createElement('button');
+a.classList.add('keys');
+a.innerHTML = 'a';
+row3.appendChild(a);
+
+const s = document.createElement('button');
+s.classList.add('keys');
+s.innerHTML = 's';
+row3.appendChild(s);
+
+const d = document.createElement('button');
+d.classList.add('keys');
+d.innerHTML = 'd';
+row3.appendChild(d);
+
+const f = document.createElement('button');
+f.classList.add('keys');
+f.innerHTML = 'f';
+row3.appendChild(f);
+
+const g = document.createElement('button');
+g.classList.add('keys');
+g.innerHTML = 'g';
+row3.appendChild(g);
+
+const h = document.createElement('button');
+h.classList.add('keys');
+h.innerHTML = 'h';
+row3.appendChild(h);
+
+const j = document.createElement('button');
+j.classList.add('keys');
+j.innerHTML = 'j';
+row3.appendChild(j);
+
+const k = document.createElement('button');
+k.classList.add('keys');
+k.innerHTML = 'k';
+row3.appendChild(k);
+
+const l = document.createElement('button');
+l.classList.add('keys');
+l.innerHTML = 'l';
+row3.appendChild(l);
+
+const semicolon = document.createElement('button');
+semicolon.classList.add('keys');
+semicolon.innerHTML = ';';
+row3.appendChild(semicolon);
+
+const quotes = document.createElement('button');
+quotes.classList.add('keys');
+quotes.innerHTML = "'";
+row3.appendChild(quotes);
+
+const enter = document.createElement('button');
+enter.classList.add('keys');
+enter.classList.add('enter-key');
+enter.innerHTML = "Enter";
+row3.appendChild(enter);
 
 
 
