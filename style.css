@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  transition: .2s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 10px;
+}
+
+.keyboard-wrapper {
+  position: relative;
+  max-width: 1008px;
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+  overflow: hidden;
+  overflow: hidden;
+  order: 2;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.keys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  margin: 4px;
+  transition: .2s;
+  background-color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.keys:hover {
+  background-color: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
+}
+
+.backspace-key {
+  width: 120px;
+}
+
+.tab-key {
+  width: 90px;
+}
+
+.slash-key {
+  width: 90px;
+}
+
+.capslock-key {
+  width: 128px;
+}
+
+.enter-key {
+  width: 120px;
+}
+
+.shift-key {
+  width: 124px;
+}
+
+.space-key {
+  max-width: 600px;
+  width: 100%;
+}
+
+.text {
+  max-width: 1008px;
+  width: 100%;
+  height: 90px;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  font-size: 26px;
+  background-color: rgb(206, 202, 202);
+  padding-left: 10px;
+  transition: .2s;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 20px;
+}
+
+.keys.active {
+  background-color: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
+}
+
+.keys.remove {
+  animation: keys_animation 0.5s forwards;
+}
+
+@keyframes keys_animation {
+  0% {
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+  }
+
+  100% {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+}
+
+body.active {
+  background-color: rgb(54, 54, 54);
+}
+
+.keyboard-wrapper.active {
+  background-color: rgb(88, 88, 88);
+}
+
+.text.active {
+  background-color: rgb(43, 43, 43);
+  color: rgb(255, 255, 255);
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: 300;
+  font-size: 34px;
+}
