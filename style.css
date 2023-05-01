@@ -47,6 +47,11 @@ body {
   cursor: pointer;
 }
 
+.keys:hover {
+  background-color: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
+}
+
 .backspace-key {
   width: 120px;
 }
@@ -123,4 +128,11 @@ body.active {
 .text.active {
   background-color: rgb(43, 43, 43);
   color: rgb(255, 255, 255);
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: 300;
+  font-size: 34px;
 }

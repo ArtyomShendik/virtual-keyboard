@@ -1,8 +1,12 @@
-
 const body = document.body;
 const container = document.createElement('div');
 container.classList.add('container');
 body.prepend(container);
+
+const title = document.createElement('h1');
+title.classList.add('title');
+title.textContent = 'Клавиатура создана в операционной системе Windows'
+body.prepend(title)
 
 const keyboardWrapper = document.createElement('div');
 keyboardWrapper.classList.add('keyboard-wrapper');
@@ -57,7 +61,6 @@ const init = () => {
 
 init();
 
-
 const backspace = document.createElement('button');
 backspace.classList.add('keys');
 backspace.classList.add('backspace-key');
@@ -79,7 +82,6 @@ row3.prepend(capslock);
 const changedChars = () => {
   let elems = document.querySelectorAll('.keys-char');
   elems.forEach(item => {
-    capsLock.classList.add('changed');
     if (item.textContent === item.textContent.toLowerCase()) {
       let newItem = item.textContent.toUpperCase();
       return item.textContent = newItem;
@@ -173,29 +175,21 @@ container.prepend(input);
 document.onkeypress = (e) => {
   const keys = document.querySelectorAll('.keys');
 
-  console.log(e.keyCode)
+  if (e.code !== 'Enter') {
+    input.value += e.key;
+  }
 
-  input.value += e.key;
-
-  keys.forEach((element) => {
-    setTimeout(() => {
-      element.classList.remove('active');
-    }, 300)
-  })
-
-  document.querySelector(`.keys[data="'+ ${e.keyCode} +'"]').classList.add('active`);
 }
 
 const allKeys = document.querySelectorAll('.keys');
 allKeys.forEach((item) => {
   item.addEventListener('click', (e) => {
     allKeys.forEach(el => {
-
       setTimeout(() => {
         el.classList.remove('active');
-      }, 300);
-
+      }, 200);
     })
+
     item.classList.add('active');
 
     if (e.target.textContent !== 'Backspace' && e.target.textContent !== 'Enter' && e.target.textContent !== 'Caps Lock' && e.target.textContent !== 'Shift' && e.target.textContent !== 'Tab' && e.target.textContent !== 'Ctrl' && e.target.textContent !== 'Fn' && e.target.textContent !== 'Alt' && e.target.textContent !== 'Win') {
@@ -205,7 +199,8 @@ allKeys.forEach((item) => {
 })
 
 const backSpace = document.querySelector('.backspace-key');
-backSpace.addEventListener('click', () => {
+
+const deleteLastElement = () => {
   let inputValue = input.value;
   let lastElemArr = inputValue.split('').slice(0, -1);
   let sortedArr = [];
@@ -216,5 +211,81 @@ backSpace.addEventListener('click', () => {
     }
   }
   return input.value = sortedArr.slice(0, -1).join('');
-})
+}
+
+backSpace.addEventListener('click', deleteLastElement);
+
+const deleteLastElemFromKeyboard = (e) => {
+  if (e.key == 'Backspace') {
+    let inputValue = input.value;
+    let lastElemArr = inputValue.split('').slice(0, -1);
+    let sortedArr = [];
+
+    for (let i = 0; i < inputValue.length; i++) {
+      if (inputValue[i] !== lastElemArr) {
+        sortedArr.push(inputValue[i])
+      }
+    }
+
+    backSpace.classList.add('active');
+    setTimeout(() => {
+      backSpace.classList.remove('active');
+    }, 200)
+
+    return input.value = sortedArr.slice(0, -1).join('');
+  }
+
+  if (e.key == 'CapsLock') {
+    capsLock.classList.add('active');
+    setTimeout(() => {
+      capsLock.classList.remove('active');
+    }, 200)
+    changedChars();
+  }
+
+  if (e.key == 'Enter') {
+    enter.classList.add('active');
+    setTimeout(() => {
+      enter.classList.remove('active');
+    }, 200)
+  }
+
+  if (e.key == 'Tab') {
+    tab.classList.add('active');
+    setTimeout(() => {
+      tab.classList.remove('active');
+    }, 200)
+  }
+
+  if (e.code == 'ShiftLeft') {
+    shift.classList.add('active');
+    setTimeout(() => {
+      shift.classList.remove('active');
+    }, 200)
+  }
+
+  if (e.code == 'ShiftRight') {
+    shiftRight.classList.add('active');
+    setTimeout(() => {
+      shiftRight.classList.remove('active');
+    }, 200)
+  }
+
+  const btnElements = document.querySelectorAll('.keys-char')
+
+  btnElements.forEach(el => {
+    if (e.key == el.textContent) {
+      el.classList.add('active');
+      setTimeout(() => {
+        el.classList.remove('active');
+      }, 200)
+    }
+  })
+}
+
+window.addEventListener('keydown', deleteLastElemFromKeyboard);
+
+
+
+
 
