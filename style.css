@@ -18,11 +18,11 @@ body {
 }
 
 .keyboard-wrapper {
+  position: relative;
   max-width: 1008px;
   width: 100%;
-  background-color: #e7e7e7;
+  background-color: rgb(231, 231, 231);
   overflow: hidden;
-  position: relative;
   overflow: hidden;
   order: 2;
 }
@@ -42,7 +42,7 @@ body {
   font-size: 20px;
   margin: 4px;
   transition: .2s;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
 }
@@ -84,15 +84,16 @@ body {
   border: none;
   outline: none;
   font-size: 26px;
-  background-color: #cecaca;
+  background-color: rgb(206, 202, 202);
   padding-left: 10px;
   transition: .2s;
   font-family: 'Montserrat', sans-serif;
+  padding: 0 20px;
 }
 
 .keys.active {
-  background-color: #333;
-  color: #fff;
+  background-color: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
 }
 
 .keys.remove {
@@ -101,13 +102,13 @@ body {
 
 @keyframes keys_animation {
   0% {
-    background-color: #333;
-    color: #fff;
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
   }
 
   100% {
-    background-color: #fff;
-    color: #000;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
   }
 }
 
@@ -116,10 +117,10 @@ body.active {
 }
 
 .keyboard-wrapper.active {
-  background-color: #585858;
+  background-color: rgb(88, 88, 88);
 }
 
 .text.active {
-  background-color: #2b2b2b;
-  color: #fff;
+  background-color: rgb(43, 43, 43);
+  color: rgb(255, 255, 255);
 }

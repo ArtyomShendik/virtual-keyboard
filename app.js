@@ -18,19 +18,15 @@ for (let i = 0; i < 5; i++) {
   keyboardKeys.appendChild(row)
 }
 
-document.onkeypress = function(e) {
-  console.log(fourthRow.push(e.charCode))
-}
-
 const row1 = document.querySelectorAll('.row')[0];
 const row2 = document.querySelectorAll('.row')[1];
 const row3 = document.querySelectorAll('.row')[2];
 const row4 = document.querySelectorAll('.row')[3];
 
-const firstRow = [96, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 45, 61];
-const secondRow = [113, 119, 101, 114, 116, 121, 117, 105, 111, 112, 91, 93, 92];
-const thirdRow = [97, 115, 100, 102, 103, 104, 106, 107, 108, 59, 39];
-const fourthRow = [122, 120, 99, 118, 98, 110, 109, 44, 46, 47];
+let firstRow = [96, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 45, 61];
+let secondRow = [113, 119, 101, 114, 116, 121, 117, 105, 111, 112, 91, 93, 92];
+let thirdRow = [97, 115, 100, 102, 103, 104, 106, 107, 108, 59, 39];
+let fourthRow = [122, 120, 99, 118, 98, 110, 109, 44, 46, 47];
 
 const init = () => {
   let out = '';
@@ -39,27 +35,28 @@ const init = () => {
   let out4 = '';
 
   for(let i = 0; i < firstRow.length; i++) {
-    out += `<button class="keys" data="">`+String.fromCharCode(firstRow[i])+`</button>`
+    out += '<button class="keys keys-char" data="'+ firstRow[i] +'">'+String.fromCharCode(firstRow[i])+'</button>';
   }
   row1.innerHTML = out;
 
   for(let i = 0; i < secondRow.length; i++) {
-    out2 += `<button class="keys" data="">`+String.fromCharCode(secondRow[i])+`</button>`
+    out2 += '<button class="keys keys-char" data="'+ secondRow[i] +'">'+String.fromCharCode(secondRow[i])+'</button>'
   }
   row2.innerHTML = out2;
 
   for(let i = 0; i < thirdRow.length; i++) {
-    out3 += `<button class="keys" data="">`+String.fromCharCode(thirdRow[i])+`</button>`
+    out3 += '<button class="keys keys-char" data="'+ thirdRow[i] +'">'+String.fromCharCode(thirdRow[i])+'</button>';
   }
   row3.innerHTML = out3;
 
   for(let i = 0; i < fourthRow.length; i++) {
-    out4 += `<button class="keys" data="">`+String.fromCharCode(fourthRow[i])+`</button>`
+    out4 += '<button class="keys keys-char" data="'+ fourthRow[i] +'">'+String.fromCharCode(fourthRow[i])+'</button>';
   }
   row4.innerHTML = out4;
 }
 
 init();
+
 
 const backspace = document.createElement('button');
 backspace.classList.add('keys');
@@ -78,6 +75,24 @@ capslock.classList.add('keys');
 capslock.classList.add('capslock-key');
 capslock.innerHTML = 'Caps Lock';
 row3.prepend(capslock);
+
+const changedChars = () => {
+  let elems = document.querySelectorAll('.keys-char');
+  elems.forEach(item => {
+    capsLock.classList.add('changed');
+    if (item.textContent === item.textContent.toLowerCase()) {
+      let newItem = item.textContent.toUpperCase();
+      return item.textContent = newItem;
+    } else {
+      let newItem = item.textContent.toLowerCase();
+      return item.textContent = newItem;
+    }
+  })
+}
+
+const capsLock = document.querySelector('.capslock-key');
+capsLock.addEventListener('click', changedChars);
+
 
 const enter = document.createElement('button');
 enter.classList.add('keys');
@@ -98,9 +113,6 @@ shiftRight.classList.add('shift-key');
 shiftRight.classList.add('shift-right');
 shiftRight.innerHTML = 'Shift';
 row4.appendChild(shiftRight);
-
-
-// fifth row
 
 const row5 = document.querySelectorAll('.row')[4];
 
@@ -149,13 +161,60 @@ ctrlRight.classList.add('ctrl-right');
 ctrlRight.innerHTML = 'Ctrl';
 row5.appendChild(ctrlRight);
 
-
 // create input
 
 const input = document.createElement('input');
 input.classList.add('text');
-input.setAttribute('type', 'text')
+input.setAttribute('type', 'text');
+input.setAttribute('value', '')
+input.innerHTML = input.getAttribute('value');
 container.prepend(input);
 
-// added interactive
+document.onkeypress = (e) => {
+  const keys = document.querySelectorAll('.keys');
+
+  console.log(e.keyCode)
+
+  input.value += e.key;
+
+  keys.forEach((element) => {
+    setTimeout(() => {
+      element.classList.remove('active');
+    }, 300)
+  })
+
+  document.querySelector(`.keys[data="'+ ${e.keyCode} +'"]').classList.add('active`);
+}
+
+const allKeys = document.querySelectorAll('.keys');
+allKeys.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    allKeys.forEach(el => {
+
+      setTimeout(() => {
+        el.classList.remove('active');
+      }, 300);
+
+    })
+    item.classList.add('active');
+
+    if (e.target.textContent !== 'Backspace' && e.target.textContent !== 'Enter' && e.target.textContent !== 'Caps Lock' && e.target.textContent !== 'Shift' && e.target.textContent !== 'Tab' && e.target.textContent !== 'Ctrl' && e.target.textContent !== 'Fn' && e.target.textContent !== 'Alt' && e.target.textContent !== 'Win') {
+      input.value += e.target.textContent;
+    }
+  })
+})
+
+const backSpace = document.querySelector('.backspace-key');
+backSpace.addEventListener('click', () => {
+  let inputValue = input.value;
+  let lastElemArr = inputValue.split('').slice(0, -1);
+  let sortedArr = [];
+
+  for (let i = 0; i < inputValue.length; i++) {
+    if (inputValue[i] !== lastElemArr) {
+      sortedArr.push(inputValue[i])
+    }
+  }
+  return input.value = sortedArr.slice(0, -1).join('');
+})
 
